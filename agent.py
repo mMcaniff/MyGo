@@ -5,6 +5,7 @@ import random
 import config 
 import board as gb
 import time
+import debugger
 
 class Agent: 
    
@@ -23,12 +24,12 @@ class Agent:
             self.mcts.backup(value)
          else: 
             self.mcts.current_node = next_state
-         #print("------ Act Loop Time elapsed: ", end - start)
+         #debugger.log("------ Act Loop Time elapsed: ", end - start)
       new_state = self.mcts.play()
       value, preds = self.mcts.get_predictions(new_state.state) 
 
       end = time.time()
-      #print("------ Act Time elapsed: ", end - start)
+      debugger.log("------ Act Time elapsed: " + str(end - start))
 
       return (new_state, value, preds)
       

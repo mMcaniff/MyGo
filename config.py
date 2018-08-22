@@ -1,3 +1,6 @@
+### DEBUG
+DEBUG = True
+
 #### SELF PLAY
 EPISODES = 30
 MCTS_SIMS = 25
